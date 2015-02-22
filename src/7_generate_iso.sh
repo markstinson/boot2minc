@@ -6,7 +6,7 @@ cd work/kernel
 cd $(ls -d *)
 
 make isoimage FDINITRD=../../rootfs.cpio.gz
-cp arch/x86/boot/image.iso ../../../minimal_linux_live.iso
+cp arch/x86/boot/image.iso ../../../boot2minc_live.iso
 
 cd ../../..
 

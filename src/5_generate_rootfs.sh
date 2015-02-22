@@ -46,11 +46,11 @@ chmod +x bootscript.sh
 
 cat > welcome.txt << EOF
 
-  #####################################
-  #                                   #
-  #  Welcome to "Minimal Linux Live"  #
-  #                                   #
-  #####################################
+  #################################
+  #                               #
+  #  Welcome to "Boot2MINC Live"  #
+  #                               #
+  #################################
 
 EOF
 
