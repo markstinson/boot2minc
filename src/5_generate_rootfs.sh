@@ -4,10 +4,19 @@ cd work
 
 rm -rf rootfs
 
+# Install busybox as a rootfs
 cd busybox
 cd $(ls -d *)
 
 cp -R _install ../../rootfs
+
+# Install mincs
+cd ../../mincs
+cd $(ls -d *)
+
+PREFIX=../../rootfs/usr/ LIBEXEC=/usr/libexec ./install.sh
+
+# Prepare rootfs
 cd ../../rootfs
 
 rm -f linuxrc
