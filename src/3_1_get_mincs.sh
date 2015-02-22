@@ -21,5 +21,10 @@ mkdir ../work/mincs
 # Full path will be something like 'work/mincs/mincs-master'
 unzip mincs.zip -x -d ../work/mincs
 
-cd ..
+# Make simple mode as default
+cd ../work/mincs
+cd $(ls -d *)
+sed -i 's/set -e/set -e;MINC_OPT_SIMPLE=y/g' libexec/minc-exec
+
+cd ../../..
 
