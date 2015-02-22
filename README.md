@@ -1,12 +1,11 @@
-Minimal Linux Live
+Boot2MINC
 =======
 
-Website:  http://minimal.linux-bg.org
+Boot2MINC is to build a bootable Linux ISO image including BusyBox and
+MINCS. This is forked from [Minimal Linux Live](https://github.com/ivandavidov/minimal) project.
+See [The DAO of Minimal Linux Live](http://minimal.linux-bg.org/the_dao_of_minimal_linux_live.txt) for more details of the scripts.
 
-Tutorial: http://minimal.linux-bg.org/the_dao_of_minimal_linux_live.txt
+The difference is adding some patches for Linux kernel and BusyBox,
+introducing MINCS install process.
 
-===   ===   ===
-
-Other projects based on "Minimal Linux Live":
-
-* https://github.com/robocoder-db/busybox-linux
+This program is Licensed under the GPLv3 as Minimal Linux Live is.
