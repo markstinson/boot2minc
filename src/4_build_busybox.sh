@@ -16,7 +16,7 @@ make defconfig
 sed -i "s/.*CONFIG_STATIC.*/CONFIG_STATIC=y/" .config
 
 # Compile busybox
-make busybox
+make busybox -j `nproc`
 
 # Create the symlinks for busybox
 # It uses the file 'busybox.links' for this

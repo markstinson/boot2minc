@@ -12,12 +12,18 @@ make mrproper
 make defconfig
 
 # Changes the name of the system
-sed -i "s/.*CONFIG_DEFAULT_HOSTNAME.*/CONFIG_DEFAULT_HOSTNAME=\"minimal\"/" .config
+sed -i "s/.*CONFIG_DEFAULT_HOSTNAME.*/CONFIG_DEFAULT_HOSTNAME=\"boot2minc\"/" .config
+
+# Config for MINC support
+sed -i "s/.*CONFIG_OVERLAY_FS\ .*/CONFIG_OVERLAY_FS=y/" .config
+sed -i "s/.*CONFIG_SQUASHFS\ .*/CONFIG_SQUASHFS=y/" .config
+
+make olddefconfig
 
 # Compile the kernel
 # Good explanation of the different kernels
 # http://unix.stackexchange.com/questions/5518/what-is-the-difference-between-the-following-kernel-makefile-terms-vmlinux-vmlinux
-make bzImage
+make bzImage -j `nproc`
 
 cd ../../..
 
