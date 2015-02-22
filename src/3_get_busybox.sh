@@ -20,5 +20,13 @@ mkdir ../work/busybox
 # Full path will be something like 'work/busybox/busybox-1.23.1'
 tar -xvf $ARCHIVE_FILE -C ../work/busybox
 
-cd ..
+# Apply extra patches for namespace
+cd ../work/busybox/
+cd $(ls -d *)
+
+for i in ../../../patches/busybox/*.patch; do
+  patch -p1 < $i
+done
+
+cd ../../../
 
