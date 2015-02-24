@@ -14,6 +14,18 @@ make defconfig
 # Changes the name of the system
 sed -i "s/.*CONFIG_DEFAULT_HOSTNAME.*/CONFIG_DEFAULT_HOSTNAME=\"boot2minc\"/" .config
 
+# Config for Virtio environment
+echo "CONFIG_VIRTIO=y" >> .config
+echo "CONFIG_VIRTIO_PCI=y" >> .config
+echo "CONFIG_VIRTIO_MMIO=y" >> .config
+echo "CONFIG_VIRTIO_CONSOLE=y" >> .config
+echo "CONFIG_VIRTIO_BLK=y" >> .config
+echo "CONFIG_VIRTIO_NET=y" >> .config
+
+# Config adding Realtek NIC
+echo "CONFIG_8139TOO=y" >> .config
+echo "CONFIG_8139CP=y" >> .config
+
 # Config for MINC support
 sed -i "s/.*CONFIG_OVERLAY_FS\ .*/CONFIG_OVERLAY_FS=y/" .config
 sed -i "s/.*CONFIG_SQUASHFS\ .*/CONFIG_SQUASHFS=y/" .config
