@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rm -f minimal_linux_live.iso
+rm -f boot2minc_live.iso
 
 cd work/kernel
 cd $(ls -d *)
