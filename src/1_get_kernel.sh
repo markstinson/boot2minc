@@ -10,7 +10,9 @@ cd source
 
 # Downloading kernel file
 # -c option allows the download to resume
-wget -c $DOWNLOAD_URL
+if [ ! -f $ARCHIVE_FILE ]; then
+  wget -c $DOWNLOAD_URL
+fi
 
 # Delete folder with previously extracted kernel
 rm -rf ../work/kernel
