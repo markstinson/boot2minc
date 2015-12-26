@@ -39,6 +39,13 @@ dmesg -n 1
 mount -t devtmpfs none /dev
 mount -t proc none /proc
 mount -t sysfs none /sys
+mount -t tmpfs tmpfs /tmp
+mount -t tmpfs tmpfs /sys/fs/cgroup/
+
+mkdir /sys/fs/cgroup/cpu
+mount -t cgroup -o cpu cgroup /sys/fs/cgroup/cpu
+mkdir /sys/fs/cgroup/memory
+mount -t cgroup -o memory cgroup /sys/fs/cgroup/memory
 
 EOF
 
